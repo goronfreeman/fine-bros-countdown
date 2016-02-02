@@ -50,15 +50,6 @@ ajax.get = function (url, data, callback, async) {
     ajax.send(url + (query.length ? '?' + query.join('&') : ''), callback, 'GET', null, async)
 };
 
-ajax.post = function (url, data, callback, async) {
-    var query = [];
-    for (var key in data) {
-        query.push(encodeURIComponent(key) + '=' + encodeURIComponent(data[key]));
-    }
-    ajax.send(url, callback, 'POST', query.join('&'), async)
-};
-
-
 // Get subscriber count
 function getSubscriberCount() {
   ajax.get('https://www.googleapis.com/youtube/v3/channels', { part: 'statistics', id: 'UC0v-tlzsn0QZwJnkiaUSJVQ', key: 'AIzaSyA2CqJawypLfBg0M7KSjH0DH9fecvLYnW4' }, function(res) {
