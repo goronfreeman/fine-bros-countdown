@@ -7,6 +7,15 @@ body {
   background-size: cover;
   height: 100%;
   margin: 0;
+  font-family: 'Helvetica'
+}
+
+h1 {
+  color: #fff;
+  left: 25%;
+  bottom: 25%;
+  position: absolute;
+  text-transform: uppercase;
 }
 
 .odometer {
@@ -14,6 +23,7 @@ body {
   font-size: 100px;
   left: 25%;
   top: 75%;
+  position: absolute;
 }
 
 .image {
