@@ -1,0 +1,36 @@
+html {
+  height: 100%;
+}
+
+body {
+  background-image: url('../assets/space.png');
+  background-size: cover;
+  height: 100%;
+  margin: 0;
+}
+
+.odometer {
+  color: #fff;
+  font-size: 100px;
+  left: 25%;
+  top: 75%;
+}
+
+.image {
+  -webkit-animation: spin 4s linear infinite;
+          animation: spin 4s linear infinite;
+  position: absolute;
+  left: 25%;
+}
+
+img {
+  width: 500px;
+}
+
+@-webkit-keyframes spin {
+  100% { -webkit-transform:rotate(360deg); transform:rotate(360deg); }
+}
+
+@keyframes spin {
+  100% { -webkit-transform:rotate(360deg); transform:rotate(360deg); }
+}
