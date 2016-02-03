@@ -1,54 +1,60 @@
-html {
-  height: 100%;
+@media screen and (max-width: 720px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  html {
+    font-size: 10px;
+  }
 }
 
 body {
   background-image: url('../images/space.png');
   background-size: cover;
-  height: 100%;
-  margin: 0;
-  font-family: 'Helvetica'
+  font-family: 'Helvetica';
 }
 
 h1 {
-  font-size: 3em;
+  font-size: 3rem;
+  width: 100%;
   text-align: center;
   color: #fff;
   text-transform: uppercase;
-  position: absolute;
-  width: 610px;
-  left: calc(50% - 305px);
-  z-index: 2;
+}
+
+.counter {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  margin-bottom: 5rem;
 }
 
 h2 {
-  font-size: 2em;
+  font-size: 2rem;
   color: #fff;
-  width: 424px;
-  left: calc(50% - 212px);
-  top: 72%;
-  position: absolute;
+  width: 100%;
+  margin: 0;
+  text-align: center;
   text-transform: uppercase;
 }
 
 .odometer {
   color: #fff;
-  font-size: 100px;
-  width: 504px;
-  left: calc(50% - 252px);
-  top: 80%;
-  position: absolute;
-}
-
-.image {
-  animation: spin 4s linear infinite;
-  position: absolute;
-  left: calc(50% - 250px);
-  top: 17%;
+  font-size: 5rem;
+  width: 100%;
+  text-align: center;
 }
 
 img {
-  width: 500px;
+  animation: spin 4s linear infinite;
+  display: block;
+  margin: auto;
+  position: relative;
+  width: 50%;
+  max-width: 30rem;
+  z-index: -1;
 }
 
 @keyframes spin {
