@@ -5,6 +5,7 @@ var gulp         = require('gulp'),
     autoprefixer = require('gulp-autoprefixer'),
     concatCss    = require('gulp-concat-css'),
     cssnano      = require('gulp-cssnano'),
+    imagemin     = require('gulp-imagemin'),
     connect      = require('gulp-connect');
 
 // Autoprefix, Concat, & Minify CSS
@@ -15,10 +16,10 @@ gulp.task('css', function() {
     browsers: ['last 2 versions'],
     cascade: false
   }))
-  .pipe(gulp.dest('dist'))
-  .pipe(rename('all.min.css'))
   .pipe(cssnano())
-  .pipe(gulp.dest('dist'))
+  .pipe(gulp.dest('dist/css'))
+  .pipe(rename('all.min.css'))
+  .pipe(gulp.dest('dist/css'))
   .pipe(connect.reload());
 });
 
@@ -26,10 +27,17 @@ gulp.task('css', function() {
 gulp.task('scripts', function() {
   return gulp.src('js/*.js')
   .pipe(concat('all.js'))
-  .pipe(gulp.dest('dist'))
+  .pipe(gulp.dest('dist/js'))
   .pipe(rename('all.min.js'))
   .pipe(uglify())
-  .pipe(gulp.dest('dist'));
+  .pipe(gulp.dest('dist/js'));
+});
+
+// Minify Images
+gulp.task('images', function() {
+  return gulp.src('images/*')
+  .pipe(imagemin())
+  .pipe(gulp.dest('dist/images'));
 });
 
 // Connect to livereload
@@ -46,4 +54,4 @@ gulp.task('watch', function() {
 });
 
 // Default Task
-gulp.task('default', ['css', 'scripts', 'watch', 'connect']);
+gulp.task('default', ['css', 'scripts', 'images', 'watch', 'connect']);
