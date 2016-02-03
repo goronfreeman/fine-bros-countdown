@@ -11,9 +11,22 @@ body {
 }
 
 h1 {
+  font-size: 3em;
+  text-align: center;
   color: #fff;
-  left: 25%;
-  bottom: 25%;
+  text-transform: uppercase;
+  position: absolute;
+  width: 610px;
+  left: calc(50% - 305px);
+  z-index: 2;
+}
+
+h2 {
+  font-size: 2em;
+  color: #fff;
+  width: 424px;
+  left: calc(50% - 212px);
+  top: 72%;
   position: absolute;
   text-transform: uppercase;
 }
@@ -21,24 +34,21 @@ h1 {
 .odometer {
   color: #fff;
   font-size: 100px;
-  left: 25%;
-  top: 75%;
+  width: 504px;
+  left: calc(50% - 252px);
+  top: 80%;
   position: absolute;
 }
 
 .image {
-  -webkit-animation: spin 4s linear infinite;
-          animation: spin 4s linear infinite;
+  animation: spin 4s linear infinite;
   position: absolute;
-  left: 25%;
+  left: calc(50% - 250px);
+  top: 17%;
 }
 
 img {
   width: 500px;
-}
-
-@-webkit-keyframes spin {
-  100% { -webkit-transform:rotate(360deg); transform:rotate(360deg); }
 }
 
 @keyframes spin {
