@@ -5,7 +5,7 @@ var gulp         = require('gulp'),
     autoprefixer = require('gulp-autoprefixer'),
     concatCss    = require('gulp-concat-css'),
     cssnano      = require('gulp-cssnano'),
-    livereload   = require('gulp-livereload');
+    connect      = require('gulp-connect');
 
 // Autoprefix, Concat, & Minify CSS
 gulp.task('css', function() {
@@ -18,7 +18,8 @@ gulp.task('css', function() {
   .pipe(gulp.dest('dist'))
   .pipe(rename('all.min.css'))
   .pipe(cssnano())
-  .pipe(gulp.dest('dist'));
+  .pipe(gulp.dest('dist'))
+  .pipe(connect.reload());
 });
 
 // Concatenate & Minify JS
@@ -31,12 +32,18 @@ gulp.task('scripts', function() {
   .pipe(gulp.dest('dist'));
 });
 
+// Connect to livereload
+gulp.task('connect', function() {
+  connect.server({
+    livereload: true
+  });
+});
+
 // Watch Files For Changes
 gulp.task('watch', function() {
-  livereload.listen();
   gulp.watch('js/*.js', ['scripts']);
   gulp.watch('css/*.css', ['css']);
 });
 
 // Default Task
-gulp.task('default', ['css', 'scripts', 'watch']);
+gulp.task('default', ['css', 'scripts', 'watch', 'connect']);
