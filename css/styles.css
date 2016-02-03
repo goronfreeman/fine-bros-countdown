@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  background-image: url('../assets/space.png');
+  background-image: url('../images/space.png');
   background-size: cover;
   height: 100%;
   margin: 0;
@@ -42,5 +42,5 @@ img {
 }
 
 @keyframes spin {
-  100% { -webkit-transform:rotate(360deg); transform:rotate(360deg); }
+  100% { transform:rotate(360deg); }
 }
