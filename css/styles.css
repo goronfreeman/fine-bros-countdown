@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  background-image: url('../assets/space.png');
+  background-image: url('../images/space.png');
   background-size: cover;
   height: 100%;
   margin: 0;
