@@ -4,6 +4,12 @@
   }
 }
 
+@media screen and (max-width: 570px) {
+  button {
+    display: none !important;
+  }
+}
+
 @media screen and (max-width: 350px) {
   html {
     font-size: 10px;
@@ -58,9 +64,14 @@ button {
   font-size: 1.5rem;
   font-weight: bold;
   margin: 1.5rem auto 0;
-  padding: .5rem 3rem;
   text-transform: uppercase;
-  transition: background 100ms ease-in-out;
+  transition: background 200ms ease-in-out;
+  width: 10rem;
+  height: 3rem;
+}
+
+.muted {
+  width: 12rem;
 }
 
 button:focus {
