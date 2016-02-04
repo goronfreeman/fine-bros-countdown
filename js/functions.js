@@ -62,3 +62,16 @@ function getSubscriberCount() {
 
 getSubscriberCount();
 setInterval(getSubscriberCount, 5000);
+
+// Mute Audio on Button Click
+document.addEventListener('DOMContentLoaded', function() {
+  var audio = document.getElementById('background_audio');
+  var button = document.getElementById('mute');
+
+  document.getElementById('mute').addEventListener('click', function (e) {
+    e = e || window.event;
+    audio.muted = !audio.muted;
+    if (audio.muted ? (button.innerHTML = 'unmute') : (button.innerHTML = 'mute'));
+    e.preventDefault();
+  }, false);
+});

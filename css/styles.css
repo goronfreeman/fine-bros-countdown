@@ -48,6 +48,29 @@ h2 {
   text-align: center;
 }
 
+button {
+  background: #441563;
+  border-radius: 5px;
+  border: 0;
+  color: white;
+  cursor: pointer;
+  display: block;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 1.5rem auto 0;
+  padding: .5rem 3rem;
+  text-transform: uppercase;
+  transition: background 100ms ease-in-out;
+}
+
+button:focus {
+  outline: 0;
+}
+
+button:hover {
+  background: #4b176d;
+}
+
 img {
   animation: spin 4s linear infinite;
   display: block;
