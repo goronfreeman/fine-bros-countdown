@@ -1,5 +1,4 @@
 // Modified from source: http://stackoverflow.com/a/18078705/772086
-
 var ajax = {};
 ajax.x = function () {
     if (typeof XMLHttpRequest !== 'undefined') {
@@ -63,15 +62,15 @@ function getSubscriberCount() {
 getSubscriberCount();
 setInterval(getSubscriberCount, 5000);
 
-// Mute Audio on Button Click
-document.addEventListener('DOMContentLoaded', function() {
+// Play/Pause on Button Click
+function toggleAudio() {
   var audio = document.getElementById('background_audio');
-  var button = document.getElementById('mute');
+  var button = document.getElementById('play');
 
-  document.getElementById('mute').addEventListener('click', function (e) {
-    e = e || window.event;
-    audio.muted = !audio.muted;
-    if (audio.muted ? (button.innerHTML = 'unmute') : (button.innerHTML = 'mute'));
-    e.preventDefault();
-  }, false);
-});
+  if (audio.paused)
+    audio.play
+    (button.innerHTML = 'Pause Sad Music');
+  else
+    audio.pause
+    (button.innerHTML = 'Play Sad Music');
+  };
